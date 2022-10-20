@@ -20,20 +20,23 @@ with open(filename) as f:
     #highs = [int(row[5]) for row in reader]
 
     # Get dates and high temperatures from this file.
-    dates, highs = [], []
+    dates, highs, lows = [], [], []
     for row in reader:
         current_date = datetime.strptime(row[2], '%Y-%m-%d')
         high = int(row[5])
+        low = int(row[6])
         dates.append(current_date)
         highs.append(high)
+        lows.append(low)
 
-# Plot the high temperatures.
+# Plot the high and low temperatures.
 plt.style.use('seaborn-v0_8')
 fig, ax = plt.subplots(figsize=(13, 7))
 ax.plot(dates, highs, c='red')
+ax.plot(dates, lows, c='blue')
 
 # Format plot.
-ax.set_title("Daily high temperatures, 2018", fontsize=24)
+ax.set_title("Daily high and low temperatures - 2018", fontsize=24)
 ax.set_xlabel('', fontsize=16)
 fig.autofmt_xdate()
 ax.set_ylabel("Temperature (F)", fontsize=16)
