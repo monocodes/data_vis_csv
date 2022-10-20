@@ -32,8 +32,9 @@ with open(filename) as f:
 # Plot the high and low temperatures.
 plt.style.use('seaborn-v0_8')
 fig, ax = plt.subplots(figsize=(13, 7))
-ax.plot(dates, highs, c='red')
-ax.plot(dates, lows, c='blue')
+ax.plot(dates, highs, c='red', alpha=0.5)
+ax.plot(dates, lows, c='blue', alpha=0.5)
+ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 
 # Format plot.
 ax.set_title("Daily high and low temperatures - 2018", fontsize=24)
