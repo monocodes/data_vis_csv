@@ -19,7 +19,7 @@ with open(filename) as f:
     # list comprehension
     #highs = [int(row[5]) for row in reader]
 
-    # Get dates and high temperatures from this file.
+    # Get dates, high and low temperatures from this file.
     dates, highs, lows = [], [], []
     for row in reader:
         current_date = datetime.strptime(row[2], '%Y-%m-%d')
