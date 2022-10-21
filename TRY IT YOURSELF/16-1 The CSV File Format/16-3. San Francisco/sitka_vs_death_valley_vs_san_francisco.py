@@ -3,10 +3,9 @@ from datetime import datetime
 
 from matplotlib import pyplot as plt
 
-def convert_temp(temp_f):
-    """converts fahrenheit to celsius"""
-    temp_c = (temp_f - 32)*5/9
-    return temp_c
+import sys
+sys.path.append('')
+from convert_temp import convert_t
 
 def get_weather_data(
     filename, dates, highs, lows, date_index,
@@ -21,9 +20,9 @@ def get_weather_data(
             current_date = datetime.strptime(row[date_index], '%Y-%m-%d')
             try:
                 high = int(row[high_index])
-                high = convert_temp(high)
+                high = convert_t(high)
                 low = int(row[low_index])
-                low = convert_temp(low)
+                low = convert_t(low)
             except ValueError:
                 print(f"Missing data for {current_date}")
             else:

@@ -8,11 +8,9 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 
-def convert_temp(temp_f):
-    """converts fahrenheit to celsius"""
-    temp_c = (temp_f - 32)*5/9
-    return temp_c
-
+import sys
+sys.path.append('')
+from convert_temp import convert_t
 
 filename = 'data/san_francisco_2018_simple.csv'
 with open(filename) as f:
@@ -36,9 +34,9 @@ with open(filename) as f:
         current_date = datetime.strptime(row[2], '%Y-%m-%d')
         try:
             high = int(row[5])
-            high = convert_temp(high)
+            high = convert_t(high)
             low = int(row[6])
-            low = convert_temp(low)
+            low = convert_t(low)
         except ValueError:
             print(f"Missing data for {current_date}")
         else:
