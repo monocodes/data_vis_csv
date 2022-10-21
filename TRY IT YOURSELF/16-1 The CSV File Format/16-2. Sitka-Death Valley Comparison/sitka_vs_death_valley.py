@@ -5,7 +5,6 @@ The temperature scales on the Sitka and Death Valley graphs reflect the differen
 
 import csv
 from datetime import datetime
-from fileinput import filename
 
 from matplotlib import pyplot as plt
 
