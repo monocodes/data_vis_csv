@@ -1,6 +1,5 @@
 import csv
 from datetime import datetime
-from fileinput import filename
 
 from matplotlib import pyplot as plt
 
