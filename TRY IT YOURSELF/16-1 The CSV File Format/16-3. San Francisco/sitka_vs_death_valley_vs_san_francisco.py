@@ -3,6 +3,7 @@ from datetime import datetime
 
 from matplotlib import pyplot as plt
 
+# import module for temperature conversion F -> C
 import sys
 sys.path.append('')
 from convert_temp import convert_t
